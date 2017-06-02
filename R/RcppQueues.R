@@ -1,10 +1,10 @@
 #################################################################
 #
-#
-#   R6-ified
-#   MICRO-Search Kernels
-#   David Smith, Hector Sanchez, Sean Wu
-#   June 1, 2017
+#   RcppQueues
+#   Fast Event Queues for Discrete Event Simulation
+#   This is part of the MASH project (https://github.com/smitdave/MASH)
+#   Sean Wu
+#   June 2, 2017
 #
 #################################################################
 
