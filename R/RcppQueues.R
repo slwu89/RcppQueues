@@ -9,5 +9,6 @@
 #################################################################
 
 #' @useDynLib RcppQueues
-#' @importFrom Rcpp sourceCpp
+#' @import Rcpp
+#' @import R6
 NULL
