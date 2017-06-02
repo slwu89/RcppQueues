@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "#################################################################\n#\n#\n#   R6-ified\n#   MICRO-Search Kernels\n#   David Smith, Hector Sanchez, Sean Wu\n#   June 1, 2017\n#\n#################################################################\n",
+    "contents" : "#################################################################\n#\n#\n#   R6-ified\n#   MICRO-Search Kernels\n#   David Smith, Hector Sanchez, Sean Wu\n#   June 1, 2017\n#\n#################################################################\n\n#' @useDynLib RcppQueues\n#' @importFrom Rcpp sourceCpp\nNULL\n",
     "created" : 1496415202181.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3148378842",
+    "hash" : "346045905",
     "id" : "EC7EC83F",
-    "lastKnownWriteTime" : 1496415570,
-    "last_content_update" : 1496415570171,
+    "lastKnownWriteTime" : 1496415989,
+    "last_content_update" : 1496415989085,
     "path" : "~/Desktop/RcppQueues/R/RcppQueues.R",
     "project_path" : "R/RcppQueues.R",
     "properties" : {

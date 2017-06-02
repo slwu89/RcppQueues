@@ -7,3 +7,7 @@
 #   June 1, 2017
 #
 #################################################################
+
+#' @useDynLib RcppQueues
+#' @importFrom Rcpp sourceCpp
+NULL
