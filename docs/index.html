@@ -60,13 +60,20 @@
 <h2 class="hasAnchor">
 <a href="#fast-event-queues-and-lookup-for-discrete-event-simulation" class="anchor"></a>Fast Event Queues and Lookup for Discrete Event Simulation</h2>
 <ul>
-<li>This package is designed to test and prototype fast event queues as part of the MASH (Module Analysis &amp; Simulation for Human Health) project, found here: <a href="http://smitdave.github.io/MASH-Development/index.html" class="uri">http://smitdave.github.io/MASH-Development/index.html</a>
+<li>This package is designed to test and prototype fast event queues as part of the MASH (Modular Analysis &amp; Simulation for Human Health) project, found here: <a href="http://smitdave.github.io/MASH-Development/index.html" class="uri">http://smitdave.github.io/MASH-Development/index.html</a>
 </li>
 <li>Initially work will focus on better implementation of Human Event Queues.</li>
 <li>Source code will be in C++ taking advantage of STL data structures, and will use <code>RcppR6</code> (<a href="https://github.com/richfitz/RcppR6" class="uri">https://github.com/richfitz/RcppR6</a>) to expose C++ classes as R6 objects in R.</li>
 <li>Documentation may be found at: <a href="https://slwu89.github.io/RcppQueues/" class="uri">https://slwu89.github.io/RcppQueues/</a>
 </li>
 </ul>
+</div>
+<div id="rationale-for-rcppqueues" class="section level2">
+<h2 class="hasAnchor">
+<a href="#rationale-for-rcppqueues" class="anchor"></a>Rationale for RcppQueues</h2>
+<p>As the MASH project expands in scope, both in terms of numbers of users, all of whom may eventually wish to become developers, writing their own <strong>MODULE</strong>, and in terms of simulation size (from village to country to continent scale), the team faces the problem of juggling modularity and ease of extension with the need for performant code.</p>
+<p>To this end, I decided to begin to write <code>RcppQueues</code>, a package that will slowly target the most computationally heavy parts of MASH and rewrite them in <code>C++</code>, using <code>RcppR6</code> to export <code>C++</code> source code to <code>R6</code> classes in <code>R</code>. By using <code>R6</code> OOP style framework, MASH is able to seamlessly integrate specific optimizations of its codebase. I chose the name <code>RcppQueues</code> because the obvious low hanging fruit was the design of the Human Event Queue, a key component across both MICRO and MACRO. The Event Queue, a critical component of MASH, is a dynamic list, a type of object <code>R</code> is not well suited to handling efficiently but which the <code>std::vector</code> object in <code>C++</code> handles with ease.</p>
+<p>As the MASH project progresses, more high priority bits of the codebase will be identified for targeted code optimization. In this manner the dev team can work on optimizing the parts of MASH that need it the most, while still keeping the overall framework in <code>R6</code>, allowing new developers to code in a familiar language without the burden of needing to be able to program in <code>C++</code>.</p>
 </div>
 </div>
   </div>
@@ -80,14 +87,10 @@
 </li>
 </ul>
 <h2>License</h2>
-
+<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> License</p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Sean Wu <br><small class="roles"> Author, maintainer </small> </li>
-</ul>
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://opensource.org/licenses/mit-license.php">MIT</a></li>
 </ul>
 </div>
 </div>
