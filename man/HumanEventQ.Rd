@@ -10,5 +10,15 @@ HumanEventQ(initQ = 100)
 \item{initQ}{reserve memory for \code{initQ} number of events}
 }
 \description{
-Human Event Queue
+A class for queueing human events.
 }
+\section{Methods}{
+
+\itemize{
+\item hi
+\itemize{
+\item nope.
+}
+}
+}
+
