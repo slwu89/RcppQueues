@@ -248,6 +248,19 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// HumanEventQ__push_eventReal
+void HumanEventQ__push_eventReal(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, double tEvent, Rcpp::RObject PAR, char tag);
+RcppExport SEXP RcppQueues_HumanEventQ__push_eventReal(SEXP obj_SEXP, SEXP tEventSEXP, SEXP PARSEXP, SEXP tagSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
+    Rcpp::traits::input_parameter< double >::type tEvent(tEventSEXP);
+    Rcpp::traits::input_parameter< Rcpp::RObject >::type PAR(PARSEXP);
+    Rcpp::traits::input_parameter< char >::type tag(tagSEXP);
+    HumanEventQ__push_eventReal(obj_, tEvent, PAR, tag);
+    return R_NilValue;
+END_RCPP
+}
 // timesTwo
 NumericVector timesTwo(NumericVector x);
 RcppExport SEXP RcppQueues_timesTwo(SEXP xSEXP) {
@@ -283,6 +296,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_HumanEventQ__ctor", (DL_FUNC) &RcppQueues_HumanEventQ__ctor, 1},
     {"RcppQueues_HumanEventQ__push_Event", (DL_FUNC) &RcppQueues_HumanEventQ__push_Event, 2},
     {"RcppQueues_HumanEventQ__front_Event", (DL_FUNC) &RcppQueues_HumanEventQ__front_Event, 1},
+    {"RcppQueues_HumanEventQ__push_eventReal", (DL_FUNC) &RcppQueues_HumanEventQ__push_eventReal, 4},
     {"RcppQueues_timesTwo", (DL_FUNC) &RcppQueues_timesTwo, 1},
     {NULL, NULL, 0}
 };

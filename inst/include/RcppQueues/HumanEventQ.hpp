@@ -32,7 +32,10 @@ public:
     Rcpp::Rcout << EventQ.front() << std::endl;;
   };
 
-
+  void push_eventReal(const double &tEvent, const Rcpp::RObject &PAR, const char &tag){
+    HumanEvent event = {tEvent, PAR, tag};
+    EventQreal.push_back(event);
+  };
 
   // fake queue
   std::vector<int> EventQ;

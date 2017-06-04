@@ -14,3 +14,9 @@ HumanEventQ:
       return_type: void
     front_Event:
       return_type: void
+    push_eventReal:
+      args:
+        - tEvent: double
+        - PAR: Rcpp::RObject
+        - tag: char
+      return_type: void

@@ -89,6 +89,10 @@ HumanEventQ__front_Event <- function(obj_) {
     invisible(.Call('RcppQueues_HumanEventQ__front_Event', PACKAGE = 'RcppQueues', obj_))
 }
 
+HumanEventQ__push_eventReal <- function(obj_, tEvent, PAR, tag) {
+    invisible(.Call('RcppQueues_HumanEventQ__push_eventReal', PACKAGE = 'RcppQueues', obj_, tEvent, PAR, tag))
+}
+
 timesTwo <- function(x) {
     .Call('RcppQueues_timesTwo', PACKAGE = 'RcppQueues', x)
 }
