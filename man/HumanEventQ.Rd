@@ -10,7 +10,7 @@ HumanEventQ(initQ = 100)
 \item{initQ}{reserve memory for \code{initQ} number of events}
 }
 \description{
-A class for queueing human events.
+A class for queueing human events. Header file defined \href{https://github.com/slwu89/RcppQueues/blob/master/inst/include/RcppQueues/HumanEventQ.hpp}{here} and \code{RcppR6} export handled \href{https://github.com/slwu89/RcppQueues/blob/master/inst/HumanEventQ.yml}{here}.
 }
 \section{Methods}{
 
