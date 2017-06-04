@@ -19,3 +19,5 @@ HumanEventQ:
       args:
         - event: "Rcpp::List"
       return_type: void
+    get_eventQ:
+      return_type: "Rcpp::List"

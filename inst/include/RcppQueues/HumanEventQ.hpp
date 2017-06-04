@@ -5,6 +5,7 @@
 
 namespace RcppQueues {
 
+// comparator funcion for sorting events by 'tEvent'
 inline bool compare_tEvent(const Rcpp::List& eventA, const Rcpp::List& eventB) { return double(eventA["tEvent"]) < double(eventB["tEvent"]); }
 
 class HumanEventQ {
@@ -29,6 +30,11 @@ public:
   // get current number of events in queue
   int get_queueN(){
     return(queueN);
+  };
+
+  // get entire event queue
+  Rcpp::List get_eventQ(){
+    return(Rcpp::wrap(EventQ));
   };
 
   // add an event to the queue and re-sort the queue

@@ -108,5 +108,9 @@ int HumanEventQ__get_queueN(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> 
 void HumanEventQ__addEvent2Q(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, Rcpp::List event) {
   obj_->addEvent2Q(event);
 }
+// [[Rcpp::export]]
+Rcpp::List HumanEventQ__get_eventQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
+  return obj_->get_eventQ();
+}
 
 

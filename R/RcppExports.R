@@ -97,6 +97,10 @@ HumanEventQ__addEvent2Q <- function(obj_, event) {
     invisible(.Call('RcppQueues_HumanEventQ__addEvent2Q', PACKAGE = 'RcppQueues', obj_, event))
 }
 
+HumanEventQ__get_eventQ <- function(obj_) {
+    .Call('RcppQueues_HumanEventQ__get_eventQ', PACKAGE = 'RcppQueues', obj_)
+}
+
 timesTwo <- function(x) {
     .Call('RcppQueues_timesTwo', PACKAGE = 'RcppQueues', x)
 }
