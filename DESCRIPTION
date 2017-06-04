@@ -1,12 +1,11 @@
 Package: RcppQueues
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Fast Event Queues and Lookup for Discrete Event Simulation
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person("Sean", "Wu", email = "slwu89@berkeley.edu",
+                  role = c("aut", "cre"))
+Description: This package is designed to test and prototype fast event queues as part of the MASH (Module Analysis & Simulation for Human Health) project, found here: http://smitdave.github.io/MASH-Development/index.html.
+License: MIT License
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
