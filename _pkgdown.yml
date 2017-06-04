@@ -9,8 +9,9 @@ reference:
     - HumanEventQ
   - title: MACRO
     desc: RcppR6 Classes for MACRO
+    contents:
+    - hello
   - title: Auxiliary
     desc: Miscellaneous Classes for MASH
     contents:
-    - hello
     - uniform
