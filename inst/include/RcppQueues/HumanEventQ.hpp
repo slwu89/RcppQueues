@@ -16,10 +16,12 @@ public:
   // constructor
   // HumanEventQ();
   HumanEventQ(const int &initQ){
-    std::vector<int> EventQ;
+    // std::vector<int> EventQ;
     EventQ.reserve(initQ);
 
     EventQreal.reserve(initQ);
+
+    EventQlist.reserve(initQ);
   }
 
   // push
@@ -42,6 +44,16 @@ public:
 
   // better queue
   std::vector<HumanEvent> EventQreal;
+
+
+  // void addEvent2Q(const Rcpp::List &event){
+  //   Rcpp::Rcout << "hi " << event[1] << std::endl;
+  // };
+
+  // queue with Rcpp::list
+  std::vector<Rcpp::List> EventQlist;
+  // size of Q
+  int queueN = 0;
 
 };
 
