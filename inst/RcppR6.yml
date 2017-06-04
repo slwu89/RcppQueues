@@ -1,0 +1,4 @@
+classes:
+  - inst/uniform.yml
+  - inst/stack.yml
+  - inst/empty.yml

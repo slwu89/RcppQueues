@@ -1,0 +1,37 @@
+uniform:
+  name_cpp: RcppQueues::Uniform
+  forward_declare: true
+  constructor:
+    roxygen: |
+      Uniform distribution
+      @param min Lower bound of the distribution (default is zero)
+      @param max Upper bound of the distribution (default is one)
+      @export
+    args:
+      - min: double = 0.0
+      - max: double = 1.0
+  methods:
+    draw:
+      args: [n: int]
+      return_type: Rcpp::NumericVector
+    range:
+      return_type: double
+      name_cpp: RcppQueues::uniform_range
+      access: function
+  active:
+    min: {type: double, access: field, readonly: true}
+    max: {type: double, access: field, readonly: true}
+    the_min:
+      name_cpp: get_min
+      name_cpp_set: set_min
+      type: double
+      access: member
+    the_max:
+      name_cpp: RcppQueues::uniform_get_max
+      name_cpp_set: RcppQueues::uniform_set_max
+      type: double
+      access: function
+    u:
+      name_cpp: RcppQueues::draw1 # read-only: only 1 element...
+      type: Rcpp::NumericVector
+      access: function
