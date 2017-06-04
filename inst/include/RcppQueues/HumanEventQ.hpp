@@ -5,6 +5,12 @@
 
 namespace RcppQueues {
 
+  typedef struct {
+    double tEvent;
+    Rcpp::RObject PAR;
+    char tag;
+  } HumanEvent;
+
 class HumanEventQ {
 public:
   // constructor
@@ -12,6 +18,8 @@ public:
   HumanEventQ(const int &initQ){
     std::vector<int> EventQ;
     EventQ.reserve(initQ);
+
+    EventQreal.reserve(initQ);
   }
 
   // push
@@ -24,9 +32,19 @@ public:
     Rcpp::Rcout << EventQ.front() << std::endl;;
   };
 
+
+
+  // fake queue
   std::vector<int> EventQ;
 
+  // better queue
+  std::vector<HumanEvent> EventQreal;
+
 };
+
+
+
+
 
 }
 
