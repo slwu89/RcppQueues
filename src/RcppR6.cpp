@@ -88,4 +88,17 @@ RcppQueues::empty empty__ctor() {
   return RcppQueues::empty();
 }
 
+// [[Rcpp::export]]
+RcppQueues::HumanEventQ HumanEventQ__ctor(int initQ) {
+  return RcppQueues::HumanEventQ(initQ);
+}
+// [[Rcpp::export]]
+void HumanEventQ__push_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, int Event) {
+  obj_->push_Event(Event);
+}
+// [[Rcpp::export]]
+void HumanEventQ__front_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
+  obj_->front_Event();
+}
+
 

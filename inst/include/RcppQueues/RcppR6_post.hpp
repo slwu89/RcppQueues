@@ -17,6 +17,9 @@ template <> inline std::string generator_name<RcppQueues::stack >() {return ".R6
 template <> inline std::string   class_name_r<RcppQueues::empty >() {return "empty";}
 template <> inline std::string   package_name<RcppQueues::empty >() {return "RcppQueues";}
 template <> inline std::string generator_name<RcppQueues::empty >() {return ".R6_empty";}
+template <> inline std::string   class_name_r<RcppQueues::HumanEventQ >() {return "HumanEventQ";}
+template <> inline std::string   package_name<RcppQueues::HumanEventQ >() {return "RcppQueues";}
+template <> inline std::string generator_name<RcppQueues::HumanEventQ >() {return ".R6_HumanEventQ";}
 }
 }
 }
@@ -55,6 +58,12 @@ template <> inline SEXP wrap(const RcppQueues::empty& x) {
 }
 template <> inline RcppQueues::empty as(SEXP x) {
   return *(RcppQueues::RcppR6::RcppR6<RcppQueues::empty>(x));
+}
+template <> inline SEXP wrap(const RcppQueues::HumanEventQ& x) {
+  return wrap(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ>(x));
+}
+template <> inline RcppQueues::HumanEventQ as(SEXP x) {
+  return *(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ>(x));
 }
 }
 

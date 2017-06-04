@@ -16,9 +16,13 @@
 // probably where the meat of the included material goes if your
 // classes directly use Rcpp types.  Otherwise you can just declare
 // them earlier up.
+#include <RcppQueues/HumanEventQ.hpp>
+
 #include <RcppQueues/uniform.hpp>
 
 #include <RcppQueues/empty.hpp>
+
+
 
 // This line can safely be the last line in the file, but may go any
 // point after RcppR6_pre.hpp is included.

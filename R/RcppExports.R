@@ -77,6 +77,18 @@ empty__ctor <- function() {
     .Call('RcppQueues_empty__ctor', PACKAGE = 'RcppQueues')
 }
 
+HumanEventQ__ctor <- function(initQ) {
+    .Call('RcppQueues_HumanEventQ__ctor', PACKAGE = 'RcppQueues', initQ)
+}
+
+HumanEventQ__push_Event <- function(obj_, Event) {
+    invisible(.Call('RcppQueues_HumanEventQ__push_Event', PACKAGE = 'RcppQueues', obj_, Event))
+}
+
+HumanEventQ__front_Event <- function(obj_) {
+    invisible(.Call('RcppQueues_HumanEventQ__front_Event', PACKAGE = 'RcppQueues', obj_))
+}
+
 timesTwo <- function(x) {
     .Call('RcppQueues_timesTwo', PACKAGE = 'RcppQueues', x)
 }

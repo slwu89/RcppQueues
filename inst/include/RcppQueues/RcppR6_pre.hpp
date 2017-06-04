@@ -13,6 +13,7 @@ template <typename T> class RcppR6;
 
 namespace RcppQueues { class Uniform; }
 namespace RcppQueues { class empty; }
+namespace RcppQueues { class HumanEventQ; }
 
 namespace Rcpp {
 template <typename T> SEXP wrap(const RcppQueues::RcppR6::RcppR6<T>&);
@@ -26,6 +27,8 @@ template <> SEXP wrap(const RcppQueues::stack&);
 template <> RcppQueues::stack as(SEXP);
 template <> SEXP wrap(const RcppQueues::empty&);
 template <> RcppQueues::empty as(SEXP);
+template <> SEXP wrap(const RcppQueues::HumanEventQ&);
+template <> RcppQueues::HumanEventQ as(SEXP);
 }
 
 #endif

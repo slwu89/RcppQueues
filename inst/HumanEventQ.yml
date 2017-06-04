@@ -1,0 +1,16 @@
+HumanEventQ:
+  name_cpp: RcppQueues::HumanEventQ
+  forward_declare: true
+  constructor:
+    roxygen: |
+      Human Event Queue
+      @param initQ reserve memory for \code{initQ} number of events
+      @export
+    args:
+      - initQ: int = 100
+  methods:
+    push_Event:
+      args: [Event: int]
+      return_type: void
+    front_Event:
+      return_type: void
