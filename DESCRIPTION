@@ -15,3 +15,5 @@ Imports: Rcpp, R6
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/slwu89/RcppQueues
+BugReports: https://github.com/slwu89/RcppQueues/issues
