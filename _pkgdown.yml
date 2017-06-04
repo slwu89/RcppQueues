@@ -1,3 +1,16 @@
 template:
   params:
     bootswatch: yeti
+
+reference:
+  - title: MICRO
+    desc:  RcppR6 Classes for MICRO.
+    contents:
+    - HumanEventQ
+  - title: MACRO
+    desc: RcppR6 Classes for MACRO
+  - title: Auxiliary
+    desc: Miscellaneous Classes for MASH
+    contents:
+    - hello
+    - uniform
