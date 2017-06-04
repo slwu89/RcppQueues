@@ -9,8 +9,13 @@ HumanEventQ:
     args:
       - initQ: int = 100
   methods:
-    push_Event:
-      args: [Event: int]
+    firstEvent:
+      return_type: "Rcpp::List"
+    rmFirstEventFromQ:
       return_type: void
-    front_Event:
+    get_queueN:
+      return_type: int
+    addEvent2Q:
+      args:
+        - event: "Rcpp::List"
       return_type: void

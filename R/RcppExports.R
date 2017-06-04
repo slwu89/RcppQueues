@@ -81,12 +81,20 @@ HumanEventQ__ctor <- function(initQ) {
     .Call('RcppQueues_HumanEventQ__ctor', PACKAGE = 'RcppQueues', initQ)
 }
 
-HumanEventQ__push_Event <- function(obj_, Event) {
-    invisible(.Call('RcppQueues_HumanEventQ__push_Event', PACKAGE = 'RcppQueues', obj_, Event))
+HumanEventQ__firstEvent <- function(obj_) {
+    .Call('RcppQueues_HumanEventQ__firstEvent', PACKAGE = 'RcppQueues', obj_)
 }
 
-HumanEventQ__front_Event <- function(obj_) {
-    invisible(.Call('RcppQueues_HumanEventQ__front_Event', PACKAGE = 'RcppQueues', obj_))
+HumanEventQ__rmFirstEventFromQ <- function(obj_) {
+    invisible(.Call('RcppQueues_HumanEventQ__rmFirstEventFromQ', PACKAGE = 'RcppQueues', obj_))
+}
+
+HumanEventQ__get_queueN <- function(obj_) {
+    .Call('RcppQueues_HumanEventQ__get_queueN', PACKAGE = 'RcppQueues', obj_)
+}
+
+HumanEventQ__addEvent2Q <- function(obj_, event) {
+    invisible(.Call('RcppQueues_HumanEventQ__addEvent2Q', PACKAGE = 'RcppQueues', obj_, event))
 }
 
 timesTwo <- function(x) {

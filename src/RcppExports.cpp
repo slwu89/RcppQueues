@@ -227,24 +227,46 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// HumanEventQ__push_Event
-void HumanEventQ__push_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, int Event);
-RcppExport SEXP RcppQueues_HumanEventQ__push_Event(SEXP obj_SEXP, SEXP EventSEXP) {
+// HumanEventQ__firstEvent
+Rcpp::List HumanEventQ__firstEvent(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
+RcppExport SEXP RcppQueues_HumanEventQ__firstEvent(SEXP obj_SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
+    rcpp_result_gen = Rcpp::wrap(HumanEventQ__firstEvent(obj_));
+    return rcpp_result_gen;
+END_RCPP
+}
+// HumanEventQ__rmFirstEventFromQ
+void HumanEventQ__rmFirstEventFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
+RcppExport SEXP RcppQueues_HumanEventQ__rmFirstEventFromQ(SEXP obj_SEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< int >::type Event(EventSEXP);
-    HumanEventQ__push_Event(obj_, Event);
+    HumanEventQ__rmFirstEventFromQ(obj_);
     return R_NilValue;
 END_RCPP
 }
-// HumanEventQ__front_Event
-void HumanEventQ__front_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
-RcppExport SEXP RcppQueues_HumanEventQ__front_Event(SEXP obj_SEXP) {
+// HumanEventQ__get_queueN
+int HumanEventQ__get_queueN(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
+RcppExport SEXP RcppQueues_HumanEventQ__get_queueN(SEXP obj_SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
+    rcpp_result_gen = Rcpp::wrap(HumanEventQ__get_queueN(obj_));
+    return rcpp_result_gen;
+END_RCPP
+}
+// HumanEventQ__addEvent2Q
+void HumanEventQ__addEvent2Q(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, Rcpp::List event);
+RcppExport SEXP RcppQueues_HumanEventQ__addEvent2Q(SEXP obj_SEXP, SEXP eventSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
-    HumanEventQ__front_Event(obj_);
+    Rcpp::traits::input_parameter< Rcpp::List >::type event(eventSEXP);
+    HumanEventQ__addEvent2Q(obj_, event);
     return R_NilValue;
 END_RCPP
 }
@@ -281,8 +303,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_stack__top__get", (DL_FUNC) &RcppQueues_stack__top__get, 1},
     {"RcppQueues_empty__ctor", (DL_FUNC) &RcppQueues_empty__ctor, 0},
     {"RcppQueues_HumanEventQ__ctor", (DL_FUNC) &RcppQueues_HumanEventQ__ctor, 1},
-    {"RcppQueues_HumanEventQ__push_Event", (DL_FUNC) &RcppQueues_HumanEventQ__push_Event, 2},
-    {"RcppQueues_HumanEventQ__front_Event", (DL_FUNC) &RcppQueues_HumanEventQ__front_Event, 1},
+    {"RcppQueues_HumanEventQ__firstEvent", (DL_FUNC) &RcppQueues_HumanEventQ__firstEvent, 1},
+    {"RcppQueues_HumanEventQ__rmFirstEventFromQ", (DL_FUNC) &RcppQueues_HumanEventQ__rmFirstEventFromQ, 1},
+    {"RcppQueues_HumanEventQ__get_queueN", (DL_FUNC) &RcppQueues_HumanEventQ__get_queueN, 1},
+    {"RcppQueues_HumanEventQ__addEvent2Q", (DL_FUNC) &RcppQueues_HumanEventQ__addEvent2Q, 2},
     {"RcppQueues_timesTwo", (DL_FUNC) &RcppQueues_timesTwo, 1},
     {NULL, NULL, 0}
 };

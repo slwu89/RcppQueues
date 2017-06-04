@@ -5,56 +5,44 @@
 
 namespace RcppQueues {
 
-  typedef struct {
-    double tEvent;
-    Rcpp::RObject PAR;
-    char tag;
-  } HumanEvent;
+inline bool compare_tEvent(const Rcpp::List& eventA, const Rcpp::List& eventB) { return double(eventA["tEvent"]) < double(eventB["tEvent"]); }
 
 class HumanEventQ {
 public:
   // constructor
-  // HumanEventQ();
   HumanEventQ(const int &initQ){
     EventQ.reserve(initQ);
-
-    EventQlist.reserve(initQ);
-    EventQlist.push_back(Rcpp::List::create(Rcpp::Named("tEvent")=73000,Rcpp::Named("PAR")=R_NilValue,Rcpp::Named("tag")="death"));
+    EventQ.push_back(Rcpp::List::create(Rcpp::Named("tEvent")=73000,Rcpp::Named("PAR")=R_NilValue,Rcpp::Named("tag")="death"));
   }
 
-  // push
-  void push_Event(const int &Event){
-    EventQ.push_back(Event);
+  // return first event as list
+  Rcpp::List firstEvent(){
+    return(EventQ.front());
   };
 
-  // get first
-  void front_Event(){
-    Rcpp::Rcout << EventQ.front() << std::endl;;
+  // remove first event from queue
+  void rmFirstEventFromQ(){
+    EventQ.erase(EventQ.begin());
+    queueN -= 1;
   };
 
+  // get current number of events in queue
+  int get_queueN(){
+    return(queueN);
+  };
 
+  // add an event to the queue and re-sort the queue
+  void addEvent2Q(const Rcpp::List &event){
+    EventQ.push_back(event);
+    std::sort(EventQ.begin(), EventQ.end(), compare_tEvent);
+    queueN += 1;
+  };
 
-  // void addEvent2Q(const Rcpp::List &event){
-  //
-  // };
 private:
-  // queue with Rcpp::list
-  std::vector<Rcpp::List> EventQlist;
-  // size of Q
-  int queueN = 0;
-
-  // fake queue
-  std::vector<int> EventQ;
-
-
-
+  std::vector<Rcpp::List> EventQ; // event queue
+  int queueN = 1; // number of events in queue
 };
 
-
-
-
-
 }
-
 
 #endif

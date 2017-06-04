@@ -93,12 +93,20 @@ RcppQueues::HumanEventQ HumanEventQ__ctor(int initQ) {
   return RcppQueues::HumanEventQ(initQ);
 }
 // [[Rcpp::export]]
-void HumanEventQ__push_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, int Event) {
-  obj_->push_Event(Event);
+Rcpp::List HumanEventQ__firstEvent(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
+  return obj_->firstEvent();
 }
 // [[Rcpp::export]]
-void HumanEventQ__front_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
-  obj_->front_Event();
+void HumanEventQ__rmFirstEventFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
+  obj_->rmFirstEventFromQ();
+}
+// [[Rcpp::export]]
+int HumanEventQ__get_queueN(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
+  return obj_->get_queueN();
+}
+// [[Rcpp::export]]
+void HumanEventQ__addEvent2Q(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, Rcpp::List event) {
+  obj_->addEvent2Q(event);
 }
 
 
