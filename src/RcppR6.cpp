@@ -100,9 +100,5 @@ void HumanEventQ__push_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ>
 void HumanEventQ__front_Event(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
   obj_->front_Event();
 }
-// [[Rcpp::export]]
-void HumanEventQ__push_eventReal(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, double tEvent, Rcpp::RObject PAR, char tag) {
-  obj_->push_eventReal(tEvent, PAR, tag);
-}
 
 

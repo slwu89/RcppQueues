@@ -16,12 +16,10 @@ public:
   // constructor
   // HumanEventQ();
   HumanEventQ(const int &initQ){
-    // std::vector<int> EventQ;
     EventQ.reserve(initQ);
 
-    EventQreal.reserve(initQ);
-
     EventQlist.reserve(initQ);
+    EventQlist.push_back(Rcpp::List::create(Rcpp::Named("tEvent")=73000,Rcpp::Named("PAR")=R_NilValue,Rcpp::Named("tag")="death"));
   }
 
   // push
@@ -34,26 +32,21 @@ public:
     Rcpp::Rcout << EventQ.front() << std::endl;;
   };
 
-  void push_eventReal(const double &tEvent, const Rcpp::RObject &PAR, const char &tag){
-    HumanEvent event = {tEvent, PAR, tag};
-    EventQreal.push_back(event);
-  };
-
-  // fake queue
-  std::vector<int> EventQ;
-
-  // better queue
-  std::vector<HumanEvent> EventQreal;
 
 
   // void addEvent2Q(const Rcpp::List &event){
-  //   Rcpp::Rcout << "hi " << event[1] << std::endl;
+  //
   // };
-
+private:
   // queue with Rcpp::list
   std::vector<Rcpp::List> EventQlist;
   // size of Q
   int queueN = 0;
+
+  // fake queue
+  std::vector<int> EventQ;
+
+
 
 };
 
