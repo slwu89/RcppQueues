@@ -15,7 +15,7 @@ public:
   }
 
   // push
-  void push_Event(int Event){
+  void push_Event(const int &Event){
     EventQ.push_back(Event);
   };
 
