@@ -6,10 +6,10 @@
 * Source code will be in C++ taking advantage of STL data structures, and will use `RcppR6` (https://github.com/richfitz/RcppR6) to expose C++ classes as R6 objects in R.
 * Documentation may be found at: https://slwu89.github.io/RcppQueues/
 * Developer's Work Queue:
-  * Human Event Queue
-  * Human Event History
-  * ImagoQ/EggQ
-  * MBITES Mosquito History
+    * Human Event Queue
+    * Human Event History
+    * ImagoQ/EggQ
+    * MBITES Mosquito History
 
 ## Rationale for RcppQueues
 
