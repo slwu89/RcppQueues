@@ -1,0 +1,29 @@
+---
+title: "Adding a Rcpp Function to Existing Class"
+author: "Sean Wu"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{addCpp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Add a Cpp function to existing R6 Class
+
+in src/testMethods.cpp we define a function to use RcppArmadillo to do matrix multiplication on hte two matrices initialized in `testClass`. R/testClasses.R defines the R6 object as well as a function `addRcppMethod` that adds the cpp method `testMethodCpp` to the `R6ClassGenerator` object. Note that `addRcppMethod` actually defines the new method `testClass$testMethodCpp()` as a wrapper that passes the `private` environment down to the actual C++ code. This is because I have not been able to figure out so far how to directly "look up" to the enclosing R6 object from C++ and pull out the `private` enrivonment. Future testing should see if we can do this with the `public` environment. Therefore we must use a wrapper to pass down that environment. We should also test to make sure the environment is being passed as a reference and not being copied (maybe we can force this with `const Rcpp::Environment &testClassEnv`, also research into this option.)
+
+The ultimate irony is that C++ is slower than R here. Always optimize intelligently! Compiled code is not always faster code.
+
+```{r}
+library(microbenchmark)
+library(RcppQueues)
+addRcppMethod()
+xx = testClass$new(500)
+microbenchmark(xx$testMethod(),xx$testMethodCpp())
+```
+

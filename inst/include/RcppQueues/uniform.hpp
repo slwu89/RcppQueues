@@ -1,7 +1,7 @@
 #ifndef _RCPPQUEUES_UNIFORM_HPP_
 #define _RCPPQUEUES_UNIFORM_HPP_
 
-#include <Rcpp.h>
+#include <RcppArmadillo.h>
 
 namespace RcppQueues {
 

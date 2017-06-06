@@ -101,7 +101,11 @@ HumanEventQ__get_eventQ <- function(obj_) {
     .Call('RcppQueues_HumanEventQ__get_eventQ', PACKAGE = 'RcppQueues', obj_)
 }
 
-timesTwo <- function(x) {
-    .Call('RcppQueues_timesTwo', PACKAGE = 'RcppQueues', x)
+#' Test method for \code{\link{testClass}}
+#'
+#' Multiplies two matrix together and returns result; should be equivalent to \code{testClass$testMethod()}
+#' @export
+testMethodCpp <- function(testClassEnv) {
+    .Call('RcppQueues_testMethodCpp', PACKAGE = 'RcppQueues', testClassEnv)
 }
 

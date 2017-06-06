@@ -2,6 +2,7 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include "../inst/include/RcppQueues.h"
+#include <RcppArmadillo.h>
 #include <Rcpp.h>
 
 using namespace Rcpp;
@@ -281,14 +282,14 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// timesTwo
-NumericVector timesTwo(NumericVector x);
-RcppExport SEXP RcppQueues_timesTwo(SEXP xSEXP) {
+// testMethodCpp
+arma::mat testMethodCpp(Rcpp::Environment testClassEnv);
+RcppExport SEXP RcppQueues_testMethodCpp(SEXP testClassEnvSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(timesTwo(x));
+    Rcpp::traits::input_parameter< Rcpp::Environment >::type testClassEnv(testClassEnvSEXP);
+    rcpp_result_gen = Rcpp::wrap(testMethodCpp(testClassEnv));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -319,7 +320,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_HumanEventQ__get_queueN", (DL_FUNC) &RcppQueues_HumanEventQ__get_queueN, 1},
     {"RcppQueues_HumanEventQ__addEvent2Q", (DL_FUNC) &RcppQueues_HumanEventQ__addEvent2Q, 2},
     {"RcppQueues_HumanEventQ__get_eventQ", (DL_FUNC) &RcppQueues_HumanEventQ__get_eventQ, 1},
-    {"RcppQueues_timesTwo", (DL_FUNC) &RcppQueues_timesTwo, 1},
+    {"RcppQueues_testMethodCpp", (DL_FUNC) &RcppQueues_testMethodCpp, 1},
     {NULL, NULL, 0}
 };
 

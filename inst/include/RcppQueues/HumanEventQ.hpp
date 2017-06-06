@@ -1,7 +1,7 @@
 #ifndef _RCPPQUEUES_HUMANEVENTQ_HPP_
 #define _RCPPQUEUES_HUMANEVENTQ_HPP_
 
-#include <Rcpp.h>
+#include <RcppArmadillo.h>
 
 namespace RcppQueues {
 
