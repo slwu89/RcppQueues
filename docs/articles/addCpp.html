@@ -66,7 +66,15 @@
 <div id="add-a-cpp-function-to-existing-r6-class" class="section level2">
 <h2 class="hasAnchor">
 <a href="#add-a-cpp-function-to-existing-r6-class" class="anchor"></a>Add a Cpp function to existing R6 Class</h2>
-<p>in src/testMethods.cpp we define a function to use RcppArmadillo to do matrix multiplication on hte two matrices initialized in <code>testClass</code>. R/testClasses.R defines the R6 object as well as a function <code>addRcppMethod</code> that adds the cpp method <code>testMethodCpp</code> to the <code>R6ClassGenerator</code> object. Note that <code>addRcppMethod</code> actually defines the new method <code>testClass$testMethodCpp()</code> as a wrapper that passes the <code>private</code> environment down to the actual C++ code. This is because I have not been able to figure out so far how to directly “look up” to the enclosing R6 object from C++ and pull out the <code>private</code> enrivonment. Future testing should see if we can do this with the <code>public</code> environment. Therefore we must use a wrapper to pass down that environment. We should also test to make sure the environment is being passed as a reference and not being copied (maybe we can force this with <code>const Rcpp::Environment &amp;testClassEnv</code>, also research into this option.)</p>
+<p>in src/testMethods.cpp we define a function to use RcppArmadillo to do matrix multiplication on hte two matrices initialized in <code>testClass</code>. R/testClasses.R defines the R6 object as well as a function <code>addRcppMethod</code> that adds the cpp method <code>testMethodCpp</code> to the <code>R6ClassGenerator</code> object.</p>
+<p>Note that <code>addRcppMethod</code> actually defines the new method <code>testClass$testMethodCpp()</code> as a wrapper that passes the <code>private</code> environment down to the actual C++ code. This is because I have not been able to figure out so far how to directly “look up” to the enclosing R6 object from C++ and pull out the <code>private</code> enrivonment. Therefore we must use a wrapper to pass down that environment.</p>
+<div id="future-testing" class="section level3">
+<h3 class="hasAnchor">
+<a href="#future-testing" class="anchor"></a>Future testing:</h3>
+<ul>
+<li>Can we directly grab the <code>public</code> environment from within the C++ code?</li>
+<li>We should also test to make sure the environment is being passed as a reference and not being copied (maybe we can force this with <code>const Rcpp::Environment &amp;testClassEnv</code>, also research into this option.)</li>
+</ul>
 <p>The ultimate irony is that C++ is slower than R here. Always optimize intelligently! Compiled code is not always faster code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(microbenchmark)
 <span class="kw">library</span>(RcppQueues)</code></pre></div>
@@ -79,12 +87,13 @@
 xx =<span class="st"> </span>testClass<span class="op">$</span><span class="kw">new</span>(<span class="dv">500</span>)
 <span class="kw">microbenchmark</span>(xx<span class="op">$</span><span class="kw">testMethod</span>(),xx<span class="op">$</span><span class="kw"><a href="../reference/testMethodCpp.html">testMethodCpp</a></span>())</code></pre></div>
 <pre><code>## Unit: milliseconds
-##                expr      min       lq     mean   median       uq      max
-##     xx$testMethod() 1.783699 1.855549 2.547994 2.024483 2.454803 33.73235
-##  xx$testMethodCpp() 2.070905 2.266976 3.081362 2.550395 3.095166 27.57944
+##                expr      min       lq     mean   median       uq       max
+##     xx$testMethod() 1.797924 1.857613 2.850831 2.366861 2.611015 28.056963
+##  xx$testMethodCpp() 2.099597 2.210624 2.762452 2.480289 3.114215  5.753656
 ##  neval
 ##    100
 ##    100</code></pre>
+</div>
 </div>
 </div>
   </div>
