@@ -33,3 +33,11 @@ void testPublicCpp(Rcpp::Environment publicEnv){
   double xx = publicEnv["publicField"];
   Rcpp::Rcout << "publicField: " << xx << std::endl;
 }
+
+//' @export
+// [[Rcpp::export]]
+void testSearchPath(int env){
+  Rcpp::Environment callEnv = Rcpp::Environment(env);
+  // double xx = callEnv["publicField"];
+  Rcpp::Rcout << "publicField: " << callEnv.ls(true) << std::endl;
+}

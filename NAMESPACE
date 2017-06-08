@@ -2,10 +2,12 @@
 
 export(HumanEventQ)
 export(addRcppMethod)
+export(parallelVectorSum)
 export(stack)
 export(testClass)
 export(testMethodCpp)
 export(testPublicCpp)
+export(testSearchPath)
 export(uniform)
 import(R6)
 import(Rcpp)

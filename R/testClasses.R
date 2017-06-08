@@ -83,4 +83,9 @@ addRcppMethod <- function(overwrite = TRUE){
                 overwrite = overwrite
   )
 
+  testClass$set(name = "testSearchPath",which = "public",
+                value = testSearchPath,
+                overwrite = overwrite
+  )
+
 }
