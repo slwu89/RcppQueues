@@ -6,6 +6,11 @@ parallelVectorSum <- function(x) {
     .Call('RcppQueues_parallelVectorSum', PACKAGE = 'RcppQueues', x)
 }
 
+#' @export
+parallelMatrixSqrt <- function(x) {
+    .Call('RcppQueues_parallelMatrixSqrt', PACKAGE = 'RcppQueues', x)
+}
+
 uniform__ctor <- function(min, max) {
     .Call('RcppQueues_uniform__ctor', PACKAGE = 'RcppQueues', min, max)
 }

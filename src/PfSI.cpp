@@ -41,3 +41,63 @@ double parallelVectorSum(NumericVector x) {
   // return the computed sum
   return sum.value;
 }
+
+struct SquareRoot : public Worker
+{
+  // source matrix
+  const RMatrix<double> input;
+
+  // destination matrix
+  RMatrix<double> output;
+
+  // initialize with source and destination
+  SquareRoot(const NumericMatrix input, NumericMatrix output)
+    : input(input), output(output) {}
+
+  // take the square root of the range of elements requested
+  void operator()(std::size_t begin, std::size_t end) {
+    std::transform(input.begin() + begin,
+                   input.begin() + end,
+                   output.begin() + begin,
+                   ::sqrt);
+  }
+};
+
+//' @export
+// [[Rcpp::export]]
+NumericMatrix parallelMatrixSqrt(NumericMatrix x) {
+
+  // allocate the output matrix
+  NumericMatrix output(x.nrow(), x.ncol());
+
+  // SquareRoot functor (pass input and output matrixes)
+  SquareRoot squareRoot(x, output);
+
+  // call parallelFor to do the work
+  parallelFor(0, x.length(), squareRoot);
+
+  // return the output matrix
+  return output;
+}
+
+
+/////////////////////////////////////////////////////////////////
+// PfSI: Calculate State Space Occupancy Vector
+/////////////////////////////////////////////////////////////////
+// struct PfSI_hist : public Worker
+// {
+//
+//   // source history
+//   const RcppParallel::RVector<Rcpp::List> input;
+//
+//   // destination matrix
+//   RcppParallel::RMatrix<double> output;
+//
+//   // only work on the elements of input I need
+//   void operation(){
+//     // write to output
+//   }
+//
+//
+//
+// };
