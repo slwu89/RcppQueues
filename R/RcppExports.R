@@ -109,3 +109,11 @@ testMethodCpp <- function(testClassEnv) {
     .Call('RcppQueues_testMethodCpp', PACKAGE = 'RcppQueues', testClassEnv)
 }
 
+#' Test method for \code{\link{testClass}}
+#'
+#' grabs the public environment and prints out one of its values
+#' @export
+testPublicCpp <- function(publicEnv) {
+    invisible(.Call('RcppQueues_testPublicCpp', PACKAGE = 'RcppQueues', publicEnv))
+}
+

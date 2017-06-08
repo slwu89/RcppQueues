@@ -13,15 +13,6 @@
 
 using namespace Rcpp;
 
-// //' Test method for \code{\link{testClass}}
-// //'
-// //' Multiplies two matrix together and returns result; should be equivalent to \code{testClass$testMethod()}
-// //' @export
-// // [[Rcpp::export]]
-// NumericMatrix testMethodCpp(Rcpp::Environment testClassEnv) {
-//   // Rcpp::Environment testClassEnv = Rcpp::Environment("private");
-//   return(Rcpp::wrap(Rcpp::as<arma::mat>(testClassEnv["matrix1"]) * Rcpp::as<arma::mat>(testClassEnv["matrix2"])));
-// }
 
 //' Test method for \code{\link{testClass}}
 //'
@@ -33,4 +24,12 @@ arma::mat testMethodCpp(Rcpp::Environment testClassEnv) {
   return(Rcpp::as<arma::mat>(testClassEnv["matrix1"]) * Rcpp::as<arma::mat>(testClassEnv["matrix2"]));
 }
 
-
+//' Test method for \code{\link{testClass}}
+//'
+//' grabs the public environment and prints out one of its values
+//' @export
+// [[Rcpp::export]]
+void testPublicCpp(Rcpp::Environment publicEnv){
+  double xx = publicEnv["publicField"];
+  Rcpp::Rcout << "publicField: " << xx << std::endl;
+}

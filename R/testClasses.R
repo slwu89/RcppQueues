@@ -41,13 +41,14 @@ testClass <- R6::R6Class(classname = "testClass",
                            initialize = function(N){
                              private$matrix1 = matrix(rlnorm(n=N*N),nrow = N,ncol = N)
                              private$matrix2 = matrix(rlnorm(n=N*N),nrow = N,ncol = N)
-
+                             self$publicField = N
                            },
 
                            testMethod = function(){
                              return(private$matrix1 %*% private$matrix2)
-                           }
+                           },
 
+                           publicField = NULL
 
                          ),
 
@@ -64,10 +65,22 @@ testClass <- R6::R6Class(classname = "testClass",
 #'
 #' Method for testing
 #'
+#' @param overwrite overwrite methods of the name name?
 #'
 #' @export
-addRcppMethod <- function(){
-  testClass$set(name = "testMethodCpp",which = "public",value = function(){
-    testMethodCpp(testClassEnv = private)
-  },overwrite = FALSE)
+addRcppMethod <- function(overwrite = TRUE){
+
+  testClass$set(name = "testMethodCpp",which = "public",
+                value = function(){
+                  testMethodCpp(testClassEnv = private)
+                  },overwrite = overwrite
+  )
+
+  testClass$set(name = "testPublicCpp",which = "public",
+                value = function(){
+                  testPublicCpp(self)
+                },
+                overwrite = overwrite
+  )
+
 }

@@ -11,4 +11,5 @@
 #' @useDynLib RcppQueues
 #' @import Rcpp
 #' @import R6
+#' @importFrom RcppParallel RcppParallelLibs
 NULL

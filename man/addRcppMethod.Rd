@@ -4,7 +4,10 @@
 \alias{addRcppMethod}
 \title{Add Rcpp Method in \code{\link{testClass}}}
 \usage{
-addRcppMethod()
+addRcppMethod(overwrite = TRUE)
+}
+\arguments{
+\item{overwrite}{overwrite methods of the name name?}
 }
 \description{
 Method for testing

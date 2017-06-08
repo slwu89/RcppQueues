@@ -293,6 +293,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// testPublicCpp
+void testPublicCpp(Rcpp::Environment publicEnv);
+RcppExport SEXP RcppQueues_testPublicCpp(SEXP publicEnvSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::Environment >::type publicEnv(publicEnvSEXP);
+    testPublicCpp(publicEnv);
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_uniform__ctor", (DL_FUNC) &RcppQueues_uniform__ctor, 2},
@@ -321,6 +331,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_HumanEventQ__addEvent2Q", (DL_FUNC) &RcppQueues_HumanEventQ__addEvent2Q, 2},
     {"RcppQueues_HumanEventQ__get_eventQ", (DL_FUNC) &RcppQueues_HumanEventQ__get_eventQ, 1},
     {"RcppQueues_testMethodCpp", (DL_FUNC) &RcppQueues_testMethodCpp, 1},
+    {"RcppQueues_testPublicCpp", (DL_FUNC) &RcppQueues_testPublicCpp, 1},
     {NULL, NULL, 0}
 };
 

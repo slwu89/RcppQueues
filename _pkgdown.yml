@@ -15,3 +15,10 @@ reference:
     desc: Miscellaneous Classes for MASH
     contents:
     - uniform
+  - title: Testing
+    desc: classes and methods for testing purposes
+    contents:
+    - testClass
+    - addRcppMethod
+    - testMethodCpp
+    - testPublicCpp

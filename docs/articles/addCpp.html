@@ -57,7 +57,7 @@
       <h1>Adding a Rcpp Function to Existing Class</h1>
                         <h4 class="author">Sean Wu</h4>
             
-            <h4 class="date">2017-06-05</h4>
+            <h4 class="date">2017-06-08</h4>
           </div>
 
     
@@ -87,9 +87,9 @@
 xx =<span class="st"> </span>testClass<span class="op">$</span><span class="kw">new</span>(<span class="dv">500</span>)
 <span class="kw">microbenchmark</span>(xx<span class="op">$</span><span class="kw">testMethod</span>(),xx<span class="op">$</span><span class="kw"><a href="../reference/testMethodCpp.html">testMethodCpp</a></span>())</code></pre></div>
 <pre><code>## Unit: milliseconds
-##                expr      min       lq     mean   median       uq       max
-##     xx$testMethod() 1.797924 1.857613 2.850831 2.366861 2.611015 28.056963
-##  xx$testMethodCpp() 2.099597 2.210624 2.762452 2.480289 3.114215  5.753656
+##                expr      min       lq     mean   median       uq      max
+##     xx$testMethod() 1.788029 2.118452 2.720598 2.405273 2.690040 31.70748
+##  xx$testMethodCpp() 2.195743 2.480290 3.191838 2.783275 3.112033 34.27963
 ##  neval
 ##    100
 ##    100</code></pre>

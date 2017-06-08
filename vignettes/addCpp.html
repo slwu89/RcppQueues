@@ -12,7 +12,7 @@
 
 <meta name="author" content="Sean Wu" />
 
-<meta name="date" content="2017-06-05" />
+<meta name="date" content="2017-06-08" />
 
 <title>Adding a Rcpp Function to Existing Class</title>
 
@@ -70,24 +70,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Adding a Rcpp Function to Existing Class</h1>
 <h4 class="author"><em>Sean Wu</em></h4>
-<h4 class="date"><em>2017-06-05</em></h4>
+<h4 class="date"><em>2017-06-08</em></h4>
 
 
 
 <div id="add-a-cpp-function-to-existing-r6-class" class="section level2">
 <h2>Add a Cpp function to existing R6 Class</h2>
-<p>in src/testMethods.cpp we define a function to use RcppArmadillo to do matrix multiplication on hte two matrices initialized in <code>testClass</code>. R/testClasses.R defines the R6 object as well as a function <code>addRcppMethod</code> that adds the cpp method <code>testMethodCpp</code> to the <code>R6ClassGenerator</code> object. Note that <code>addRcppMethod</code> actually defines the new method <code>testClass$testMethodCpp()</code> as a wrapper that passes the <code>private</code> environment down to the actual C++ code. This is because I have not been able to figure out so far how to directly “look up” to the enclosing R6 object from C++ and pull out the <code>private</code> enrivonment. Future testing should see if we can do this with the <code>public</code> environment. Therefore we must use a wrapper to pass down that environment. We should also test to make sure the environment is being passed as a reference and not being copied (maybe we can force this with <code>const Rcpp::Environment &amp;testClassEnv</code>, also research into this option.)</p>
+<p>in src/testMethods.cpp we define a function to use RcppArmadillo to do matrix multiplication on hte two matrices initialized in <code>testClass</code>. R/testClasses.R defines the R6 object as well as a function <code>addRcppMethod</code> that adds the cpp method <code>testMethodCpp</code> to the <code>R6ClassGenerator</code> object.</p>
+<p>Note that <code>addRcppMethod</code> actually defines the new method <code>testClass$testMethodCpp()</code> as a wrapper that passes the <code>private</code> environment down to the actual C++ code. This is because I have not been able to figure out so far how to directly “look up” to the enclosing R6 object from C++ and pull out the <code>private</code> enrivonment. Therefore we must use a wrapper to pass down that environment.</p>
+<div id="future-testing" class="section level3">
+<h3>Future testing:</h3>
+<ul>
+<li>Can we directly grab the <code>public</code> environment from within the C++ code?</li>
+<li>We should also test to make sure the environment is being passed as a reference and not being copied (maybe we can force this with <code>const Rcpp::Environment &amp;testClassEnv</code>, also research into this option.)</li>
+</ul>
+<p>The ultimate irony is that C++ is slower than R here. Always optimize intelligently! Compiled code is not always faster code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(microbenchmark)
+<span class="kw">library</span>(RcppQueues)
 <span class="kw">addRcppMethod</span>()
 xx =<span class="st"> </span>testClass<span class="op">$</span><span class="kw">new</span>(<span class="dv">500</span>)
 <span class="kw">microbenchmark</span>(xx<span class="op">$</span><span class="kw">testMethod</span>(),xx<span class="op">$</span><span class="kw">testMethodCpp</span>())</code></pre></div>
 <pre><code>## Unit: milliseconds
-##                expr      min       lq     mean   median       uq      max
-##     xx$testMethod() 1.789861 1.837868 2.397389 1.881797 2.160016 34.99569
-##  xx$testMethodCpp() 2.051805 2.178648 2.894872 2.289581 2.902458 36.60755
+##                expr      min       lq     mean   median       uq       max
+##     xx$testMethod() 1.793337 1.837642 2.695806 1.866633 2.524722 34.064911
+##  xx$testMethodCpp() 2.087407 2.169731 2.417989 2.238256 2.681366  3.503349
 ##  neval
 ##    100
 ##    100</code></pre>
+</div>
 </div>
 
 
