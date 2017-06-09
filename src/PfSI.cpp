@@ -1,6 +1,8 @@
 // [[Rcpp::depends(RcppParallel)]]
 #include <Rcpp.h>
 #include <RcppParallel.h>
+#include <cmath>
+#include <algorithm>
 
 using namespace Rcpp;
 using namespace RcppParallel;
@@ -84,20 +86,50 @@ NumericMatrix parallelMatrixSqrt(NumericMatrix x) {
 /////////////////////////////////////////////////////////////////
 // PfSI: Calculate State Space Occupancy Vector
 /////////////////////////////////////////////////////////////////
-// struct PfSI_hist : public Worker
+
+
+// inline int size(NumericVector xx) {
+//   return(xx.size());
+// }
+//
+// struct ListTest : public Worker
 // {
 //
 //   // source history
-//   const RcppParallel::RVector<Rcpp::List> input;
+//   const RcppParallel::RVector<double> input;
 //
 //   // destination matrix
-//   RcppParallel::RMatrix<double> output;
+//   // RcppParallel::RMatrix<double> output;
+//   RcppParallel::RVector<int> output;
+//
+//   //initialize with source and destination
+//   ListTest(const NumericVector input, Rcpp::IntegerVector output)
+//     : input(input), output(output) {}
 //
 //   // only work on the elements of input I need
-//   void operation(){
+//   void operator()(std::size_t begin, std::size_t end){
 //     // write to output
+//     std::transform(input.begin()+begin,
+//                    input.begin()+end,
+//                    output.begin()+begin,
+//                    size);
 //   }
 //
-//
-//
 // };
+//
+// //' @export
+// // [[Rcpp::export]]
+// IntegerVector listTestFun(Rcpp::NumericVector x){
+//
+//   // allocate output vector
+//   Rcpp::IntegerVector output(x.size());
+//
+//   // listTest functor (pass input and output objects)
+//   ListTest listTest(x, output);
+//
+//   // call parallelFor to do the work
+//   RcppParallel::parallelFor(0, x.size(), listTest);
+//
+//   // return the output vector
+//   return output;
+// }

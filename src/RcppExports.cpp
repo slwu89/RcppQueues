@@ -29,6 +29,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// listTestFun
+IntegerVector listTestFun(Rcpp::NumericVector x);
+RcppExport SEXP RcppQueues_listTestFun(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(listTestFun(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // uniform__ctor
 RcppQueues::Uniform uniform__ctor(double min, double max);
 RcppExport SEXP RcppQueues_uniform__ctor(SEXP minSEXP, SEXP maxSEXP) {
@@ -339,6 +350,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_parallelVectorSum", (DL_FUNC) &RcppQueues_parallelVectorSum, 1},
     {"RcppQueues_parallelMatrixSqrt", (DL_FUNC) &RcppQueues_parallelMatrixSqrt, 1},
+    {"RcppQueues_listTestFun", (DL_FUNC) &RcppQueues_listTestFun, 1},
     {"RcppQueues_uniform__ctor", (DL_FUNC) &RcppQueues_uniform__ctor, 2},
     {"RcppQueues_uniform__draw", (DL_FUNC) &RcppQueues_uniform__draw, 2},
     {"RcppQueues_uniform__range", (DL_FUNC) &RcppQueues_uniform__range, 1},
