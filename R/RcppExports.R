@@ -11,11 +11,6 @@ parallelMatrixSqrt <- function(x) {
     .Call('RcppQueues_parallelMatrixSqrt', PACKAGE = 'RcppQueues', x)
 }
 
-#' @export
-listTestFun <- function(x) {
-    .Call('RcppQueues_listTestFun', PACKAGE = 'RcppQueues', x)
-}
-
 uniform__ctor <- function(min, max) {
     .Call('RcppQueues_uniform__ctor', PACKAGE = 'RcppQueues', min, max)
 }

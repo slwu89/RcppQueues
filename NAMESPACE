@@ -2,7 +2,6 @@
 
 export(HumanEventQ)
 export(addRcppMethod)
-export(listTestFun)
 export(parallelMatrixSqrt)
 export(parallelVectorSum)
 export(stack)
