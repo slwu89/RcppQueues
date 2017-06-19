@@ -18,6 +18,10 @@ HumanEventQ:
       return_type: "Rcpp::List"
     rmFirstEventFromQ:
       return_type: void
+    rmTagFromQ:
+      args:
+        - tag: "std::string"
+      return_type: void
     get_queueN:
       return_type: int
     addEvent2Q:

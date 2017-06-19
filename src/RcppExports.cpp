@@ -271,6 +271,17 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// HumanEventQ__rmTagFromQ
+void HumanEventQ__rmTagFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, std::string tag);
+RcppExport SEXP RcppQueues_HumanEventQ__rmTagFromQ(SEXP obj_SEXP, SEXP tagSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
+    Rcpp::traits::input_parameter< std::string >::type tag(tagSEXP);
+    HumanEventQ__rmTagFromQ(obj_, tag);
+    return R_NilValue;
+END_RCPP
+}
 // HumanEventQ__get_queueN
 int HumanEventQ__get_queueN(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
 RcppExport SEXP RcppQueues_HumanEventQ__get_queueN(SEXP obj_SEXP) {
@@ -361,6 +372,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"RcppQueues_HumanEventQ__ctor", (DL_FUNC) &RcppQueues_HumanEventQ__ctor, 1},
     {"RcppQueues_HumanEventQ__firstEvent", (DL_FUNC) &RcppQueues_HumanEventQ__firstEvent, 1},
     {"RcppQueues_HumanEventQ__rmFirstEventFromQ", (DL_FUNC) &RcppQueues_HumanEventQ__rmFirstEventFromQ, 1},
+    {"RcppQueues_HumanEventQ__rmTagFromQ", (DL_FUNC) &RcppQueues_HumanEventQ__rmTagFromQ, 2},
     {"RcppQueues_HumanEventQ__get_queueN", (DL_FUNC) &RcppQueues_HumanEventQ__get_queueN, 1},
     {"RcppQueues_HumanEventQ__addEvent2Q", (DL_FUNC) &RcppQueues_HumanEventQ__addEvent2Q, 2},
     {"RcppQueues_HumanEventQ__get_eventQ", (DL_FUNC) &RcppQueues_HumanEventQ__get_eventQ, 1},

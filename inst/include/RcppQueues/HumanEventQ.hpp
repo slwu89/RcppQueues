@@ -14,6 +14,7 @@ public:
   HumanEventQ(const int &initQ){
     EventQ.reserve(initQ);
     EventQ.push_back(Rcpp::List::create(Rcpp::Named("tEvent")=73000,Rcpp::Named("PAR")=R_NilValue,Rcpp::Named("tag")="death"));
+    queueN = EventQ.size();
   }
 
   // return first event as list
@@ -25,6 +26,18 @@ public:
   void rmFirstEventFromQ(){
     EventQ.erase(EventQ.begin());
     queueN -= 1;
+  };
+
+  // remove all events with certain tag from queue
+  void rmTagFromQ(const std::string &tag){
+    EventQ.erase(std::remove_if(
+      EventQ.begin(), EventQ.end(),
+      [tag](const Rcpp::List& Event) {
+        return(
+          tag.compare(Rcpp::as<std::string>(Event["tag"]))==0
+        );
+      }), EventQ.end());
+    queueN = EventQ.size();
   };
 
   // get current number of events in queue
@@ -46,7 +59,7 @@ public:
 
 private:
   std::vector<Rcpp::List> EventQ; // event queue
-  int queueN = 1; // number of events in queue
+  int queueN = 0; // number of events in queue
 };
 
 }

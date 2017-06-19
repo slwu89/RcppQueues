@@ -99,6 +99,10 @@ HumanEventQ__rmFirstEventFromQ <- function(obj_) {
     invisible(.Call('RcppQueues_HumanEventQ__rmFirstEventFromQ', PACKAGE = 'RcppQueues', obj_))
 }
 
+HumanEventQ__rmTagFromQ <- function(obj_, tag) {
+    invisible(.Call('RcppQueues_HumanEventQ__rmTagFromQ', PACKAGE = 'RcppQueues', obj_, tag))
+}
+
 HumanEventQ__get_queueN <- function(obj_) {
     .Call('RcppQueues_HumanEventQ__get_queueN', PACKAGE = 'RcppQueues', obj_)
 }

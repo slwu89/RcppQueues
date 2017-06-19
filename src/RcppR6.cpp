@@ -101,6 +101,10 @@ void HumanEventQ__rmFirstEventFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::Human
   obj_->rmFirstEventFromQ();
 }
 // [[Rcpp::export]]
+void HumanEventQ__rmTagFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, std::string tag) {
+  obj_->rmTagFromQ(tag);
+}
+// [[Rcpp::export]]
 int HumanEventQ__get_queueN(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_) {
   return obj_->get_queueN();
 }
