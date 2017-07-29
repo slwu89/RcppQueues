@@ -10,6 +10,7 @@ public:
   // constructor
   MosquitoPop(const int &N = 1000);
 
+  // add more methods
 
 private:
   std::list<Rcpp::Environment> Pop;
