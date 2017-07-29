@@ -9,7 +9,7 @@ using namespace Rcpp;
 
 // parallelVectorSum
 double parallelVectorSum(NumericVector x);
-RcppExport SEXP RcppQueues_parallelVectorSum(SEXP xSEXP) {
+RcppExport SEXP _RcppQueues_parallelVectorSum(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -20,7 +20,7 @@ END_RCPP
 }
 // parallelMatrixSqrt
 NumericMatrix parallelMatrixSqrt(NumericMatrix x);
-RcppExport SEXP RcppQueues_parallelMatrixSqrt(SEXP xSEXP) {
+RcppExport SEXP _RcppQueues_parallelMatrixSqrt(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -29,219 +29,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// uniform__ctor
-RcppQueues::Uniform uniform__ctor(double min, double max);
-RcppExport SEXP RcppQueues_uniform__ctor(SEXP minSEXP, SEXP maxSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type min(minSEXP);
-    Rcpp::traits::input_parameter< double >::type max(maxSEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__ctor(min, max));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__draw
-Rcpp::NumericVector uniform__draw(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_, int n);
-RcppExport SEXP RcppQueues_uniform__draw(SEXP obj_SEXP, SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__draw(obj_, n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__range
-double uniform__range(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_);
-RcppExport SEXP RcppQueues_uniform__range(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__range(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__min__get
-double uniform__min__get(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_);
-RcppExport SEXP RcppQueues_uniform__min__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__min__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__max__get
-double uniform__max__get(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_);
-RcppExport SEXP RcppQueues_uniform__max__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__max__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__the_min__get
-double uniform__the_min__get(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_);
-RcppExport SEXP RcppQueues_uniform__the_min__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__the_min__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__the_min__set
-void uniform__the_min__set(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_, double value);
-RcppExport SEXP RcppQueues_uniform__the_min__set(SEXP obj_SEXP, SEXP valueSEXP) {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< double >::type value(valueSEXP);
-    uniform__the_min__set(obj_, value);
-    return R_NilValue;
-END_RCPP
-}
-// uniform__the_max__get
-double uniform__the_max__get(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_);
-RcppExport SEXP RcppQueues_uniform__the_max__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__the_max__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uniform__the_max__set
-void uniform__the_max__set(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_, double value);
-RcppExport SEXP RcppQueues_uniform__the_max__set(SEXP obj_SEXP, SEXP valueSEXP) {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< double >::type value(valueSEXP);
-    uniform__the_max__set(obj_, value);
-    return R_NilValue;
-END_RCPP
-}
-// uniform__u__get
-Rcpp::NumericVector uniform__u__get(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> obj_);
-RcppExport SEXP RcppQueues_uniform__u__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(uniform__u__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// stack__ctor
-RcppQueues::stack stack__ctor();
-RcppExport SEXP RcppQueues_stack__ctor() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(stack__ctor());
-    return rcpp_result_gen;
-END_RCPP
-}
-// stack__pop
-void stack__pop(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_);
-RcppExport SEXP RcppQueues_stack__pop(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    stack__pop(obj_);
-    return R_NilValue;
-END_RCPP
-}
-// stack__push
-void stack__push(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_, int x);
-RcppExport SEXP RcppQueues_stack__push(SEXP obj_SEXP, SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< int >::type x(xSEXP);
-    stack__push(obj_, x);
-    return R_NilValue;
-END_RCPP
-}
-// stack__equals
-bool stack__equals(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_, RcppQueues::stack other);
-RcppExport SEXP RcppQueues_stack__equals(SEXP obj_SEXP, SEXP otherSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< RcppQueues::stack >::type other(otherSEXP);
-    rcpp_result_gen = Rcpp::wrap(stack__equals(obj_, other));
-    return rcpp_result_gen;
-END_RCPP
-}
-// stack__differs
-bool stack__differs(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_, RcppQueues::stack other);
-RcppExport SEXP RcppQueues_stack__differs(SEXP obj_SEXP, SEXP otherSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    Rcpp::traits::input_parameter< RcppQueues::stack >::type other(otherSEXP);
-    rcpp_result_gen = Rcpp::wrap(stack__differs(obj_, other));
-    return rcpp_result_gen;
-END_RCPP
-}
-// stack__empty__get
-bool stack__empty__get(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_);
-RcppExport SEXP RcppQueues_stack__empty__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(stack__empty__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// stack__size__get
-size_t stack__size__get(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_);
-RcppExport SEXP RcppQueues_stack__size__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(stack__size__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// stack__top__get
-int stack__top__get(RcppQueues::RcppR6::RcppR6<RcppQueues::stack> obj_);
-RcppExport SEXP RcppQueues_stack__top__get(SEXP obj_SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::stack> >::type obj_(obj_SEXP);
-    rcpp_result_gen = Rcpp::wrap(stack__top__get(obj_));
-    return rcpp_result_gen;
-END_RCPP
-}
-// empty__ctor
-RcppQueues::empty empty__ctor();
-RcppExport SEXP RcppQueues_empty__ctor() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(empty__ctor());
-    return rcpp_result_gen;
-END_RCPP
-}
 // HumanEventQ__ctor
 RcppQueues::HumanEventQ HumanEventQ__ctor(int initQ);
-RcppExport SEXP RcppQueues_HumanEventQ__ctor(SEXP initQSEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__ctor(SEXP initQSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -252,7 +42,7 @@ END_RCPP
 }
 // HumanEventQ__firstEvent
 Rcpp::List HumanEventQ__firstEvent(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
-RcppExport SEXP RcppQueues_HumanEventQ__firstEvent(SEXP obj_SEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__firstEvent(SEXP obj_SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -263,7 +53,7 @@ END_RCPP
 }
 // HumanEventQ__rmFirstEventFromQ
 void HumanEventQ__rmFirstEventFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
-RcppExport SEXP RcppQueues_HumanEventQ__rmFirstEventFromQ(SEXP obj_SEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__rmFirstEventFromQ(SEXP obj_SEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
@@ -273,7 +63,7 @@ END_RCPP
 }
 // HumanEventQ__rmTagFromQ
 void HumanEventQ__rmTagFromQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, std::string tag);
-RcppExport SEXP RcppQueues_HumanEventQ__rmTagFromQ(SEXP obj_SEXP, SEXP tagSEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__rmTagFromQ(SEXP obj_SEXP, SEXP tagSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
@@ -284,7 +74,7 @@ END_RCPP
 }
 // HumanEventQ__get_queueN
 int HumanEventQ__get_queueN(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
-RcppExport SEXP RcppQueues_HumanEventQ__get_queueN(SEXP obj_SEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__get_queueN(SEXP obj_SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -295,7 +85,7 @@ END_RCPP
 }
 // HumanEventQ__addEvent2Q
 void HumanEventQ__addEvent2Q(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_, Rcpp::List event);
-RcppExport SEXP RcppQueues_HumanEventQ__addEvent2Q(SEXP obj_SEXP, SEXP eventSEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__addEvent2Q(SEXP obj_SEXP, SEXP eventSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> >::type obj_(obj_SEXP);
@@ -306,7 +96,7 @@ END_RCPP
 }
 // HumanEventQ__get_eventQ
 Rcpp::List HumanEventQ__get_eventQ(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ> obj_);
-RcppExport SEXP RcppQueues_HumanEventQ__get_eventQ(SEXP obj_SEXP) {
+RcppExport SEXP _RcppQueues_HumanEventQ__get_eventQ(SEXP obj_SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -317,7 +107,7 @@ END_RCPP
 }
 // testMethodCpp
 arma::mat testMethodCpp(Rcpp::Environment testClassEnv);
-RcppExport SEXP RcppQueues_testMethodCpp(SEXP testClassEnvSEXP) {
+RcppExport SEXP _RcppQueues_testMethodCpp(SEXP testClassEnvSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -328,7 +118,7 @@ END_RCPP
 }
 // testPublicCpp
 void testPublicCpp(Rcpp::Environment publicEnv);
-RcppExport SEXP RcppQueues_testPublicCpp(SEXP publicEnvSEXP) {
+RcppExport SEXP _RcppQueues_testPublicCpp(SEXP publicEnvSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::Environment >::type publicEnv(publicEnvSEXP);
@@ -338,7 +128,7 @@ END_RCPP
 }
 // testSearchPath
 void testSearchPath(int env);
-RcppExport SEXP RcppQueues_testSearchPath(SEXP envSEXP) {
+RcppExport SEXP _RcppQueues_testSearchPath(SEXP envSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type env(envSEXP);
@@ -348,37 +138,18 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"RcppQueues_parallelVectorSum", (DL_FUNC) &RcppQueues_parallelVectorSum, 1},
-    {"RcppQueues_parallelMatrixSqrt", (DL_FUNC) &RcppQueues_parallelMatrixSqrt, 1},
-    {"RcppQueues_uniform__ctor", (DL_FUNC) &RcppQueues_uniform__ctor, 2},
-    {"RcppQueues_uniform__draw", (DL_FUNC) &RcppQueues_uniform__draw, 2},
-    {"RcppQueues_uniform__range", (DL_FUNC) &RcppQueues_uniform__range, 1},
-    {"RcppQueues_uniform__min__get", (DL_FUNC) &RcppQueues_uniform__min__get, 1},
-    {"RcppQueues_uniform__max__get", (DL_FUNC) &RcppQueues_uniform__max__get, 1},
-    {"RcppQueues_uniform__the_min__get", (DL_FUNC) &RcppQueues_uniform__the_min__get, 1},
-    {"RcppQueues_uniform__the_min__set", (DL_FUNC) &RcppQueues_uniform__the_min__set, 2},
-    {"RcppQueues_uniform__the_max__get", (DL_FUNC) &RcppQueues_uniform__the_max__get, 1},
-    {"RcppQueues_uniform__the_max__set", (DL_FUNC) &RcppQueues_uniform__the_max__set, 2},
-    {"RcppQueues_uniform__u__get", (DL_FUNC) &RcppQueues_uniform__u__get, 1},
-    {"RcppQueues_stack__ctor", (DL_FUNC) &RcppQueues_stack__ctor, 0},
-    {"RcppQueues_stack__pop", (DL_FUNC) &RcppQueues_stack__pop, 1},
-    {"RcppQueues_stack__push", (DL_FUNC) &RcppQueues_stack__push, 2},
-    {"RcppQueues_stack__equals", (DL_FUNC) &RcppQueues_stack__equals, 2},
-    {"RcppQueues_stack__differs", (DL_FUNC) &RcppQueues_stack__differs, 2},
-    {"RcppQueues_stack__empty__get", (DL_FUNC) &RcppQueues_stack__empty__get, 1},
-    {"RcppQueues_stack__size__get", (DL_FUNC) &RcppQueues_stack__size__get, 1},
-    {"RcppQueues_stack__top__get", (DL_FUNC) &RcppQueues_stack__top__get, 1},
-    {"RcppQueues_empty__ctor", (DL_FUNC) &RcppQueues_empty__ctor, 0},
-    {"RcppQueues_HumanEventQ__ctor", (DL_FUNC) &RcppQueues_HumanEventQ__ctor, 1},
-    {"RcppQueues_HumanEventQ__firstEvent", (DL_FUNC) &RcppQueues_HumanEventQ__firstEvent, 1},
-    {"RcppQueues_HumanEventQ__rmFirstEventFromQ", (DL_FUNC) &RcppQueues_HumanEventQ__rmFirstEventFromQ, 1},
-    {"RcppQueues_HumanEventQ__rmTagFromQ", (DL_FUNC) &RcppQueues_HumanEventQ__rmTagFromQ, 2},
-    {"RcppQueues_HumanEventQ__get_queueN", (DL_FUNC) &RcppQueues_HumanEventQ__get_queueN, 1},
-    {"RcppQueues_HumanEventQ__addEvent2Q", (DL_FUNC) &RcppQueues_HumanEventQ__addEvent2Q, 2},
-    {"RcppQueues_HumanEventQ__get_eventQ", (DL_FUNC) &RcppQueues_HumanEventQ__get_eventQ, 1},
-    {"RcppQueues_testMethodCpp", (DL_FUNC) &RcppQueues_testMethodCpp, 1},
-    {"RcppQueues_testPublicCpp", (DL_FUNC) &RcppQueues_testPublicCpp, 1},
-    {"RcppQueues_testSearchPath", (DL_FUNC) &RcppQueues_testSearchPath, 1},
+    {"_RcppQueues_parallelVectorSum", (DL_FUNC) &_RcppQueues_parallelVectorSum, 1},
+    {"_RcppQueues_parallelMatrixSqrt", (DL_FUNC) &_RcppQueues_parallelMatrixSqrt, 1},
+    {"_RcppQueues_HumanEventQ__ctor", (DL_FUNC) &_RcppQueues_HumanEventQ__ctor, 1},
+    {"_RcppQueues_HumanEventQ__firstEvent", (DL_FUNC) &_RcppQueues_HumanEventQ__firstEvent, 1},
+    {"_RcppQueues_HumanEventQ__rmFirstEventFromQ", (DL_FUNC) &_RcppQueues_HumanEventQ__rmFirstEventFromQ, 1},
+    {"_RcppQueues_HumanEventQ__rmTagFromQ", (DL_FUNC) &_RcppQueues_HumanEventQ__rmTagFromQ, 2},
+    {"_RcppQueues_HumanEventQ__get_queueN", (DL_FUNC) &_RcppQueues_HumanEventQ__get_queueN, 1},
+    {"_RcppQueues_HumanEventQ__addEvent2Q", (DL_FUNC) &_RcppQueues_HumanEventQ__addEvent2Q, 2},
+    {"_RcppQueues_HumanEventQ__get_eventQ", (DL_FUNC) &_RcppQueues_HumanEventQ__get_eventQ, 1},
+    {"_RcppQueues_testMethodCpp", (DL_FUNC) &_RcppQueues_testMethodCpp, 1},
+    {"_RcppQueues_testPublicCpp", (DL_FUNC) &_RcppQueues_testPublicCpp, 1},
+    {"_RcppQueues_testSearchPath", (DL_FUNC) &_RcppQueues_testSearchPath, 1},
     {NULL, NULL, 0}
 };
 

@@ -3,116 +3,40 @@
 
 #' @export
 parallelVectorSum <- function(x) {
-    .Call('RcppQueues_parallelVectorSum', PACKAGE = 'RcppQueues', x)
+    .Call('_RcppQueues_parallelVectorSum', PACKAGE = 'RcppQueues', x)
 }
 
 #' @export
 parallelMatrixSqrt <- function(x) {
-    .Call('RcppQueues_parallelMatrixSqrt', PACKAGE = 'RcppQueues', x)
-}
-
-uniform__ctor <- function(min, max) {
-    .Call('RcppQueues_uniform__ctor', PACKAGE = 'RcppQueues', min, max)
-}
-
-uniform__draw <- function(obj_, n) {
-    .Call('RcppQueues_uniform__draw', PACKAGE = 'RcppQueues', obj_, n)
-}
-
-uniform__range <- function(obj_) {
-    .Call('RcppQueues_uniform__range', PACKAGE = 'RcppQueues', obj_)
-}
-
-uniform__min__get <- function(obj_) {
-    .Call('RcppQueues_uniform__min__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-uniform__max__get <- function(obj_) {
-    .Call('RcppQueues_uniform__max__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-uniform__the_min__get <- function(obj_) {
-    .Call('RcppQueues_uniform__the_min__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-uniform__the_min__set <- function(obj_, value) {
-    invisible(.Call('RcppQueues_uniform__the_min__set', PACKAGE = 'RcppQueues', obj_, value))
-}
-
-uniform__the_max__get <- function(obj_) {
-    .Call('RcppQueues_uniform__the_max__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-uniform__the_max__set <- function(obj_, value) {
-    invisible(.Call('RcppQueues_uniform__the_max__set', PACKAGE = 'RcppQueues', obj_, value))
-}
-
-uniform__u__get <- function(obj_) {
-    .Call('RcppQueues_uniform__u__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-stack__ctor <- function() {
-    .Call('RcppQueues_stack__ctor', PACKAGE = 'RcppQueues')
-}
-
-stack__pop <- function(obj_) {
-    invisible(.Call('RcppQueues_stack__pop', PACKAGE = 'RcppQueues', obj_))
-}
-
-stack__push <- function(obj_, x) {
-    invisible(.Call('RcppQueues_stack__push', PACKAGE = 'RcppQueues', obj_, x))
-}
-
-stack__equals <- function(obj_, other) {
-    .Call('RcppQueues_stack__equals', PACKAGE = 'RcppQueues', obj_, other)
-}
-
-stack__differs <- function(obj_, other) {
-    .Call('RcppQueues_stack__differs', PACKAGE = 'RcppQueues', obj_, other)
-}
-
-stack__empty__get <- function(obj_) {
-    .Call('RcppQueues_stack__empty__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-stack__size__get <- function(obj_) {
-    .Call('RcppQueues_stack__size__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-stack__top__get <- function(obj_) {
-    .Call('RcppQueues_stack__top__get', PACKAGE = 'RcppQueues', obj_)
-}
-
-empty__ctor <- function() {
-    .Call('RcppQueues_empty__ctor', PACKAGE = 'RcppQueues')
+    .Call('_RcppQueues_parallelMatrixSqrt', PACKAGE = 'RcppQueues', x)
 }
 
 HumanEventQ__ctor <- function(initQ) {
-    .Call('RcppQueues_HumanEventQ__ctor', PACKAGE = 'RcppQueues', initQ)
+    .Call('_RcppQueues_HumanEventQ__ctor', PACKAGE = 'RcppQueues', initQ)
 }
 
 HumanEventQ__firstEvent <- function(obj_) {
-    .Call('RcppQueues_HumanEventQ__firstEvent', PACKAGE = 'RcppQueues', obj_)
+    .Call('_RcppQueues_HumanEventQ__firstEvent', PACKAGE = 'RcppQueues', obj_)
 }
 
 HumanEventQ__rmFirstEventFromQ <- function(obj_) {
-    invisible(.Call('RcppQueues_HumanEventQ__rmFirstEventFromQ', PACKAGE = 'RcppQueues', obj_))
+    invisible(.Call('_RcppQueues_HumanEventQ__rmFirstEventFromQ', PACKAGE = 'RcppQueues', obj_))
 }
 
 HumanEventQ__rmTagFromQ <- function(obj_, tag) {
-    invisible(.Call('RcppQueues_HumanEventQ__rmTagFromQ', PACKAGE = 'RcppQueues', obj_, tag))
+    invisible(.Call('_RcppQueues_HumanEventQ__rmTagFromQ', PACKAGE = 'RcppQueues', obj_, tag))
 }
 
 HumanEventQ__get_queueN <- function(obj_) {
-    .Call('RcppQueues_HumanEventQ__get_queueN', PACKAGE = 'RcppQueues', obj_)
+    .Call('_RcppQueues_HumanEventQ__get_queueN', PACKAGE = 'RcppQueues', obj_)
 }
 
 HumanEventQ__addEvent2Q <- function(obj_, event) {
-    invisible(.Call('RcppQueues_HumanEventQ__addEvent2Q', PACKAGE = 'RcppQueues', obj_, event))
+    invisible(.Call('_RcppQueues_HumanEventQ__addEvent2Q', PACKAGE = 'RcppQueues', obj_, event))
 }
 
 HumanEventQ__get_eventQ <- function(obj_) {
-    .Call('RcppQueues_HumanEventQ__get_eventQ', PACKAGE = 'RcppQueues', obj_)
+    .Call('_RcppQueues_HumanEventQ__get_eventQ', PACKAGE = 'RcppQueues', obj_)
 }
 
 #' Test method for \code{\link{testClass}}
@@ -120,7 +44,7 @@ HumanEventQ__get_eventQ <- function(obj_) {
 #' Multiplies two matrix together and returns result; should be equivalent to \code{testClass$testMethod()}
 #' @export
 testMethodCpp <- function(testClassEnv) {
-    .Call('RcppQueues_testMethodCpp', PACKAGE = 'RcppQueues', testClassEnv)
+    .Call('_RcppQueues_testMethodCpp', PACKAGE = 'RcppQueues', testClassEnv)
 }
 
 #' Test method for \code{\link{testClass}}
@@ -128,11 +52,11 @@ testMethodCpp <- function(testClassEnv) {
 #' grabs the public environment and prints out one of its values
 #' @export
 testPublicCpp <- function(publicEnv) {
-    invisible(.Call('RcppQueues_testPublicCpp', PACKAGE = 'RcppQueues', publicEnv))
+    invisible(.Call('_RcppQueues_testPublicCpp', PACKAGE = 'RcppQueues', publicEnv))
 }
 
 #' @export
 testSearchPath <- function(env) {
-    invisible(.Call('RcppQueues_testSearchPath', PACKAGE = 'RcppQueues', env))
+    invisible(.Call('_RcppQueues_testSearchPath', PACKAGE = 'RcppQueues', env))
 }
 

@@ -1,3 +1,0 @@
-empty:
-  name_cpp: "RcppQueues::empty"
-  forward_declare: true

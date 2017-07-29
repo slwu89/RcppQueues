@@ -8,15 +8,6 @@
 namespace RcppQueues {
 namespace RcppR6 {
 namespace traits {
-template <> inline std::string   class_name_r<RcppQueues::Uniform >() {return "uniform";}
-template <> inline std::string   package_name<RcppQueues::Uniform >() {return "RcppQueues";}
-template <> inline std::string generator_name<RcppQueues::Uniform >() {return ".R6_uniform";}
-template <> inline std::string   class_name_r<RcppQueues::stack >() {return "stack";}
-template <> inline std::string   package_name<RcppQueues::stack >() {return "RcppQueues";}
-template <> inline std::string generator_name<RcppQueues::stack >() {return ".R6_stack";}
-template <> inline std::string   class_name_r<RcppQueues::empty >() {return "empty";}
-template <> inline std::string   package_name<RcppQueues::empty >() {return "RcppQueues";}
-template <> inline std::string generator_name<RcppQueues::empty >() {return ".R6_empty";}
 template <> inline std::string   class_name_r<RcppQueues::HumanEventQ >() {return "HumanEventQ";}
 template <> inline std::string   package_name<RcppQueues::HumanEventQ >() {return "RcppQueues";}
 template <> inline std::string generator_name<RcppQueues::HumanEventQ >() {return ".R6_HumanEventQ";}
@@ -41,24 +32,6 @@ private:
 };
 }
 
-template <> inline SEXP wrap(const RcppQueues::Uniform& x) {
-  return wrap(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform>(x));
-}
-template <> inline RcppQueues::Uniform as(SEXP x) {
-  return *(RcppQueues::RcppR6::RcppR6<RcppQueues::Uniform>(x));
-}
-template <> inline SEXP wrap(const RcppQueues::stack& x) {
-  return wrap(RcppQueues::RcppR6::RcppR6<RcppQueues::stack>(x));
-}
-template <> inline RcppQueues::stack as(SEXP x) {
-  return *(RcppQueues::RcppR6::RcppR6<RcppQueues::stack>(x));
-}
-template <> inline SEXP wrap(const RcppQueues::empty& x) {
-  return wrap(RcppQueues::RcppR6::RcppR6<RcppQueues::empty>(x));
-}
-template <> inline RcppQueues::empty as(SEXP x) {
-  return *(RcppQueues::RcppR6::RcppR6<RcppQueues::empty>(x));
-}
 template <> inline SEXP wrap(const RcppQueues::HumanEventQ& x) {
   return wrap(RcppQueues::RcppR6::RcppR6<RcppQueues::HumanEventQ>(x));
 }
